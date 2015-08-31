@@ -15,4 +15,4 @@ THANKS TO:
 * http://jakevdp.github.io/blog/2013/06/01/ipython-notebook-javascript-python-communication/ for the tutorial on JavaScript/Python Bi-directional Communication
 
 SCREENSHOT:
-![re_tester](https://cloud.githubusercontent.com/assets/1577669/9582575/27d52bfe-4fd4-11e5-8b4e-4c6d23068af1.png)
+![ipython-notebook-regex-tester](https://cloud.githubusercontent.com/assets/1577669/9588711/b47c4fb0-4ff7-11e5-8029-585e2a7f6c41.png)
