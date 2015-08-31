@@ -83,63 +83,95 @@ function toggleCode() {
     } else {
         $("#show-hide-button").text("Show Python Code");
     }
-    $('.output').height('800px');
     $('div.output_prompt').toggle()
 }
 $( document ).ready(toggleCode);
 </script>
 <style>
-.error {
-    background-color:#f99;
-}
-#regex {
-    font-size:16pt;
-    width:700px;
-}
-#execute-button {
-    width:700px;
-    font-size:20pt;
-    padding:10px;
-}
-span.match {
-    background-color:#ff0;
-}
-textarea#string {
-    font-family:monospace;
-    height:100px;
-    width:700px;
-}
-#stringoutput {
-    border:1px solid #000; 
-    min-height:100px; 
-    width:700px
-}
-li.strong {
-    border-top:1px solid #999;
-    border-bottom:1px dashed #000;
-    background-color:#ffc;
-}
+    #regex-container {
+        width:100%;
+        border:none;
+    }
+    
+    #regex-container td {
+        border:none;
+        vertical-align:top;
+        padding:20px;
+    }
+    #regex-container td#right-col {
+        text-align:center;
+        border-left:1px solid #000;
+    }
+    #regex-container tr {
+        vertical-align: top;
+        border:none;
+    }
+
+    #show-hide-button {
+        font-size:12pt;
+        padding:5px;
+    }
+
+    .error {
+        background-color:#f99;
+    }
+    #regex {
+        font-size:16pt;
+        width:700px;
+    }
+    #execute-button {
+        width:700px;
+        font-size:20pt;
+        padding:10px;
+    }
+    span.match {
+        background-color:#ff0;
+    }
+    textarea#string {
+        font-family:monospace;
+        height:100px;
+        width:700px;
+    }
+    #stringoutput {
+        border:1px solid #000; 
+        min-height:100px; 
+        width:700px
+    }
+    li.strong {
+        border-top:1px solid #999;
+        border-bottom:1px dashed #000;
+        background-color:#ffc;
+    }
+
+    .output {
+        min-height:800px;
+        overflow:scroll;
+    }
 </style>
-<h3>Regular Expression:</h3>
-<input id="regex" value="(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?"><br><br>
-<div id="flags">
-    <label><input type="checkbox" id="ignorecase" onclick="ke(this,'flag')" checked> IGNORECASE</label> |
-    <label><input type="checkbox" id="locale" onclick="ke(this,'flag')"> LOCALE</label> |
-    <label><input type="checkbox" id="multiline" onclick="ke(this,'flag')"> MULTILINE</label> |
-    <label><input type="checkbox" id="dotall" onclick="ke(this,'flag')"> DOTALL</label> |
-    <label><input type="checkbox" id="verbose" onclick="ke(this,'flag')"> VERBOSE</label> |
-    <label><input type="checkbox" id="ascii" onclick="ke(this,'flag')"> ASCII</label>
-</div>
-<h3>Enter a string to search:</h3>
-<textarea id="string">This regular expression tester was developed as part of Webucator's Advanced Python course at https://www.webucator.com/programming/course/advanced-python-training-pyt211.cfm. For our other Python courses, visit https://www.webucator.com/programming/python.cfm.</textarea><br>
-<button id="execute-button" onclick="checkMatch()">Execute</button>
-<h3>Output:</h3>
-<pre id="stringoutput"></pre>
-<h3>Groups</h3>
-<ul id="groups"></ul>
-<hr>
-<p style="text-align:right;">
-    <button onclick="toggleCode()" id="show-hide-button">Hide Python Code</button>
-</p>
-<hr>
-<p>Visit Webucator for <a href="https://www.webucator.com/programming/python.cfm">Python Training</a>.</p>
+<table id="regex-container">
+    <tr>
+        <td>
+            <h3>Regular Expression:</h3>
+            <input id="regex" value="\b(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\b"><br><br>
+            <div id="flags">
+                <label><input type="checkbox" id="ignorecase" onclick="ke(this,'flag')" checked> IGNORECASE</label> |
+                <label><input type="checkbox" id="locale" onclick="ke(this,'flag')"> LOCALE</label> |
+                <label><input type="checkbox" id="multiline" onclick="ke(this,'flag')"> MULTILINE</label> |
+                <label><input type="checkbox" id="dotall" onclick="ke(this,'flag')"> DOTALL</label> |
+                <label><input type="checkbox" id="verbose" onclick="ke(this,'flag')"> VERBOSE</label> |
+                <label><input type="checkbox" id="ascii" onclick="ke(this,'flag')"> ASCII</label>
+            </div>
+            <h3>Enter a string to search:</h3>
+            <textarea id="string">This regular expression tester was developed as part of Webucator's Advanced Python course at https://www.webucator.com/programming/course/advanced-python-training-pyt211.cfm. For our other Python courses, visit https://www.webucator.com/programming/python.cfm.</textarea><br>
+            <button id="execute-button" onclick="checkMatch()">Execute</button>
+            <h3>Output:</h3>
+            <pre id="stringoutput"></pre>
+            <h3>Groups</h3>
+            <ul id="groups"></ul>
+        </td>
+        <td id="right-col">
+            <button onclick="toggleCode()" id="show-hide-button">Hide Python Code</button>
+            <hr>Visit Webucator for<br><a href="https://www.webucator.com/programming/python.cfm">Python Training</a>.
+        </td>
+    </tr>
+</table>
